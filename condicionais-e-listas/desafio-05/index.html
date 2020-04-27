@@ -1,5 +1,5 @@
+<meta charset="UTF-8">
 <script src="https://unpkg.com/vue"></script>
-<script src="app.js"></script>
 
 <div id="desafio">
   <!-- 1) Ligue o botão para alternar a exibição dos dois
@@ -7,18 +7,18 @@
     para ver a diferença -->
   <h2>#01</h2>
   <div>
-    <button @click="alternar">Alternar</button>
+    <button @click="alternar = !alternar">Alternar</button>
     <p v-if="alternar">Você quer me ver ...</p>
-    <p v-else="!alternar">...ou eu</p>
-    <p>Você quer me ver ...</p>
-    <p>...ou eu</p>
+    <p v-else>...ou eu</p>
+    <p v-show="alternar">Você quer me ver ...</p>
+    <p v-show="!alternar">...ou eu</p>
   </div>
 
   <!-- 2) Exiba em uma <ul> um array de elementos da sua escolha.
     Imprima também o índice de cada elemento. -->
   <h2>#02</h2>
-  <ul>
-    <li></li>
+  <ul v-for="(arr, index) in array">
+    <li> {{arr}} - {{index}}</li>
   </ul>
   
   <!-- 3) Imprimir todos os pares de valor-chave do objeto a seguir:
@@ -30,7 +30,9 @@
     Imprima também o índice de cada item. -->
   <h2>#03</h2>
   <ul>
-    <li></li>
+    <li v-for="(valor, chave, index) in livro">
+      {{valor}} - {{chave}} - {{index}}
+    </li>
   </ul>
   
   <!-- 4) Imprima o seguinte objeto (somente os valores) e
@@ -43,8 +45,38 @@
     (dica: use v-for e v-if na resolução) -->
   <h2>#04</h2>
   <ul>
-    <li>
-    
+    <li v-for="(valor, chave, index) in aluno">
+      <template v-if="!Array.isArray(valor)">
+        {{valor}}
+      </template>
+      <template v-else>
+        Notas:
+        <ul>
+          <li v-for="nota in valor">
+            {{nota}}
+          </li>
+        </ul>
+      </template>
     </li>
   </ul>
 </div>
+
+<script>
+new Vue({
+	el: '#desafio',
+	data: {
+		alternar: true,
+		array: ['Pedro', 'Bia', 'Ana', 'Rebeca'],
+		livro: {
+			titulo: 'O Senhor dos Anéis',
+			autor: 'J.R.R. Tolkiens',
+			volume: '3'
+		},
+		aluno: {
+			id: 10,
+			nome: 'Maria',
+			notas: [7.67, 8.33, 6.98, 9.21]
+		}
+	}
+});
+</script>
