@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="projeto">
+    <div>
+        <p> Jogador </p>
+        <p> Monstro </p>
+    </div>
+    <br>
+    <div>
+        <div class="barra-progresso" >
+            <div class="progresso" :style="{width: widthJogador}"></div>	
+            <div> {{widthJogador}} </div>	
+        </div>
+        <br>
+        <div class="barra-progresso" >
+            <div class="progresso" :style="{width: widthMonstro}"></div>	
+            <div> {{widthMonstro}} </div>
+        </div>
+    </div>
+    <br>
+    <template v-if="fimDeJogo">
+        <div>{{vencedor}}</div>
+        <br>
+        <div>
+            <button @click="novoJogo">
+                INICIAR NOVO JOGO
+            </button>
+        </div>
+    </template>
+    
+    <div v-if="!fimDeJogo">
+        <button @click="ataque"> Ataque </button>
+        <button @click="ataqueEspecial"> Ataque Especial </button>
+        <button @click="curar"> Curar </button>
+        <button @click="desistir"> Desistir </button>
+    </div>
+    <div v-for="(message, index) in messages" :key="index">
+        <p> {{message}} </p>
+    </div>
+</div>
+
+
+<script src="app.js"></script>
