@@ -3,17 +3,14 @@
 <script src="https://unpkg.com/vue"></script>
 
 <div id="projeto">
-    <div>
+    <div class="caixas">
         <p> Jogador </p>
-        <p> Monstro </p>
-    </div>
-    <br>
-    <div>
         <div class="barra-progresso" >
             <div class="progresso" :style="{width: widthJogador}"></div>	
             <div> {{widthJogador}} </div>	
         </div>
         <br>
+        <p> Monstro </p>
         <div class="barra-progresso" >
             <div class="progresso" :style="{width: widthMonstro}"></div>	
             <div> {{widthMonstro}} </div>
@@ -23,14 +20,14 @@
     <template v-if="fimDeJogo">
         <div>{{vencedor}}</div>
         <br>
-        <div>
+        <div class="caixas">
             <button @click="novoJogo">
                 INICIAR NOVO JOGO
             </button>
         </div>
     </template>
     
-    <div v-if="!fimDeJogo">
+    <div class="caixas" v-if="!fimDeJogo">
         <button @click="ataque"> Ataque </button>
         <button @click="ataqueEspecial"> Ataque Especial </button>
         <button @click="curar"> Curar </button>
