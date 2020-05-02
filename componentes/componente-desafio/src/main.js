@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
-import Menu from './Menu.vue'
-import Desafio from './Desafio.vue'
-import Fotos from './Fotos.vue'
-import Curso from './Curso.vue'
+import Menu from '@/components/template/Menu.vue'
+import Desafio from '@/components/template/Desafio.vue'
+import Fotos from '@/components/widgets/Fotos.vue'
+import Curso from '@/components/template/Curso.vue'
 
 Vue.config.productionTip = false
 
