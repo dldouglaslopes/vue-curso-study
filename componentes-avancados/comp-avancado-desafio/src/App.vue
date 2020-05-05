@@ -5,6 +5,11 @@
 			<button class="verde" @click="ativarVerde">{{verde}}</button>
 			<button class="azul" @click="ativarAzul">{{azul}}</button>
 		</span>
+
+		<!-- <component :is="componente" 
+		<span> Conteudo do componente <strong>  {{componente}}</strong> </span>
+		</component>
+		-->
 		
 		<Vermelho v-if="flagVermelho"> 
 			<div slot="vermelho"> {{vermelho}} </div> 
@@ -36,6 +41,7 @@ export default {
 			flagVermelho: false,
 			flagVerde: false,
 			flagAzul: false
+			//componente: 'Vemelho'
 		}
 	},
 	methods:{
