@@ -1,4 +1,4 @@
-# http-exercicios
+# rotas-exercicios
 
 ## Project setup
 ```
