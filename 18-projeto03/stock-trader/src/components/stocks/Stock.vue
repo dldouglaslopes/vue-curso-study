@@ -1,0 +1,22 @@
+<template>
+    <v-flex class="pr-3 pb-3">
+        <v-card class="green darken-3 white--text">
+            <v-card-title class="headline">
+                <strong>NOME <small>(Preço: PRECO)</small></strong>
+            </v-card-title>    
+        </v-card>
+        <v-card>
+            <v-container fill-height></v-container>
+        </v-card>
+    </v-flex>
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style>
+
+</style>
